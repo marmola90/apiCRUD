@@ -22,5 +22,5 @@ RUN npm run tsc
 #COPY --chown=node:node . .
 
 EXPOSE 3000 
-
-CMD [ "pm2-runtime", "build/server.js" ]
+CMD [ "npm", "run","dev" ]
+#CMD [ "pm2-runtime", "build/server.js" ]
