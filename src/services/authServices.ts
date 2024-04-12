@@ -19,7 +19,8 @@ const loginUser = async ({ username, password }: Auth): Promise<any> => {
     return JSON.stringify(err)
   })
 
-  const userLogin = await SeguridadDB('dbo.Usuario')
+  const usuarioDB = 'ApiCRUD.Usuario'
+  const userLogin = await SeguridadDB(usuarioDB)
     .select('Usuario', 'EstaActivo', 'IDPerfil')
     .where('Usuario', username)
     .then(datos => datos)

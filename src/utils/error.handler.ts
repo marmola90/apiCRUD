@@ -2,10 +2,10 @@ import { Response } from 'express'
 import { typeErrorDB } from '../types'
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-const handlerHttp = (res: Response, error: string, errorRaw?: any) => {
+const handlerHttp = (res: Response, Error: string, errorRaw?: any) => {
   console.log(errorRaw)
   res.status(500)
-  res.send({ error, description: errorRaw })
+  res.send({ Error, description: errorRaw.message })
 }
 
 const handlerDatabaseError = (tipoError: typeErrorDB, errorRaw?: any): void => {

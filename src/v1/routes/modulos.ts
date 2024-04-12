@@ -13,4 +13,12 @@ router.put('/updateModulo', checkSession, modulosController.updateModulo)
 
 router.post('/insertModulo', checkSession, modulosController.insertModulo)
 
+router.delete('/deletetModulo', checkSession, modulosController.deleteModulo)
+
+router.post('/getModulosAsignados', checkSession, modulosController.getModulosAsignado)
+
+router.post('/asignarModulo', checkSession, modulosController.asignarModulo)
+
+router.delete('/deleteModulosAsignados', checkSession, modulosController.deleteModulosAsignados)
+
 export { router }

@@ -1,0 +1,1 @@
+import{j as r,U as n}from"./index-293ef122.js";import{V as t}from"./constants-48ef82c5.js";const d=({openBackdrop:o,setOpenBackdrop:s})=>{const e=()=>{s(!1)};return r.jsx(t,{sx:{color:"#fff",zIndex:a=>a.zIndex.drawer+1},open:o,onClick:e,children:r.jsx(n,{color:"inherit"})})};export{d as default};

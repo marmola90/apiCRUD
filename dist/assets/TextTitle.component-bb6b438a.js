@@ -1,0 +1,1 @@
+import{j as e}from"./index-293ef122.js";import{T as a}from"./Typography-ea7746a4.js";const p=({variante:t,color:r,titleName:o})=>e.jsx(a,{variant:t,gutterBottom:!0,color:r,children:o});export{p as default};

@@ -7,7 +7,7 @@ import { obtenerUsuarioAuth } from '../utils/jwt.handler'
 export const getAllVersionCapturadores = async (_req: Request, res: Response): Promise<IXNET_TABLAS | any> => {
   try {
     const allVersionCapturadores = await xnetService.getAllVersionCapturadores()
-    res.send({ status: 'OK', data: allVersionCapturadores })
+    allVersionCapturadores?.ErrorInterno as boolean ? res.send({ status: 'Error', data: allVersionCapturadores }) : res.send({ status: 'OK', data: allVersionCapturadores })
   } catch (error) {
     handlerHttp(res, 'ERROR_GET_ALLVERSIONCAPTURADORES', error)
   }
@@ -51,7 +51,7 @@ export const updateVersionCapturadores = async (req: Request, res: Response): Pr
       IdOrdenCategoria
     }
     const updateVersionCapturadores = await xnetService.updateVersionCapturadores(tabla, user)
-    res.send({ status: 'OK', data: updateVersionCapturadores })
+    updateVersionCapturadores?.ErrorInterno as boolean ? res.send({ status: 'Error', data: updateVersionCapturadores }) : res.send({ status: 'OK', data: updateVersionCapturadores })
   } catch (error) {
     handlerHttp(res, 'ERROR_PUT_VERSIONCAPTURADOR', error)
   }
@@ -84,7 +84,7 @@ export const insertVersionCapturador = async (req: Request, res: Response): Prom
       AccesoTipoInstitucion
     }
     const insertVersionCapturador = await xnetService.insertVersionCapturador(datos, user)
-    res.send({ status: 'OK', data: insertVersionCapturador })
+    insertVersionCapturador?.ErrorInterno as boolean ? res.send({ status: 'Error', data: insertVersionCapturador }) : res.send({ status: 'OK', data: insertVersionCapturador })
   } catch (error) {
     handlerHttp(res, 'ERROR_POST_VERSIONCAPTURADOR', error)
   }
