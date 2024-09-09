@@ -1,5 +1,9 @@
-FROM node:18-alpine as builder
+FROM node:18-alpine AS builder
 
+#RUN apk add --no-cache tzdata
+#ENV TZ=America/Tegucigalpa
+
+#RUN  ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone 
 #RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
 RUN mkdir -p /home/node/app/
 
@@ -27,6 +31,11 @@ RUN npm run tsc
 
 FROM node:18-alpine
 
+RUN apk add --no-cache tzdata
+ENV TZ=America/Tegucigalpa
+
+RUN  ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone 
+#COPY --from=builder /etc/timezone  /etc/timezone 
 WORKDIR /home/node/app
 
 COPY --from=builder /home/node/app/build ./build

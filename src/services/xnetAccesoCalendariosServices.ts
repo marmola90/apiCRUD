@@ -30,7 +30,8 @@ const updateAccessosCalendarios = async (tabla: IXNET_SistemasAccessosCalendario
         USUARIO: tabla.USUARIO,
         CodigoSistema: tabla.CodigoSistema,
         usuarioAPP: username,
-        ComandoSQL: 'UPDATE'
+        ComandoSQL: 'UPDATE',
+        Aplicacion: process.env.APP_NAME
       })
       .returning('IDRow')
       .then(valor => valor[0].IDRow)
@@ -61,7 +62,8 @@ const insertAccessosCalendarios = async (datos: IXNET_SistemasAccessosCalendario
       USUARIO: datos.USUARIO,
       CodigoSistema: datos.CodigoSistema,
       usuarioAPP: username,
-      ComandoSQL: 'UPDATE'
+      ComandoSQL: 'UPDATE',
+      Aplicacion: process.env.APP_NAME
     })
     .returning('IDRow')
     .then(valor => valor[0].IDRow)

@@ -1,0 +1,1 @@
+import{j as r,al as n,am as l}from"./index-441cd09c.js";const t=({openBackdrop:o,setOpenBackdrop:e})=>{const s=()=>{e(!1)};return r.jsx(r.Fragment,{children:r.jsx(n,{sx:{color:"#fff",zIndex:a=>a.zIndex.drawer+1},open:o,onClick:s,children:r.jsx(l,{color:"inherit"})})})};export{t as default};

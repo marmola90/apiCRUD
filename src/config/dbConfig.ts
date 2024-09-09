@@ -33,8 +33,8 @@ const IntegracionDB = knex(dbOptions(client,
   process.env.APP_NAME))
 
 const CNBSBox = knex(dbOptions(client,
-  process.env.ENV_TYPE === 'PROD' ? SERVER.SUPER : process.env.APP_SERVER_DES,
-  process.env.ENV_TYPE === 'PROD' ? parseInt(process.env.APP_DB_PORT as string, 10) : parseInt(process.env.APP_DB_PORT_DES as string, 10),
+  process.env.ENV_TYPE === 'PROD' ? SERVER.ADMON : process.env.APP_SERVER_DES,
+  process.env.ENV_TYPE === 'PROD' ? parseInt(process.env.APP_DB_PORT_ADMON as string, 10) : parseInt(process.env.APP_DB_PORT_DES as string, 10),
   process.env.ENV_TYPE === 'PROD' ? process.env.APP_USER : process.env.APP_USER_DES,
   process.env.ENV_TYPE === 'PROD' ? process.env.APP_PASS : process.env.APP_PASS_DES,
   BD.CNBSBox,

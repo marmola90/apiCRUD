@@ -1,0 +1,1 @@
+import{an as s,A as r}from"./index-f9663bdf.js";const t=r,o=t+"v1/userEncryptRoutes/getTipoUsuario",a=t+"v1/userEncryptRoutes/decryptPass",p=async()=>await fetch(o,{headers:s()}),i=async e=>await fetch(a,{method:"post",headers:s(),body:JSON.stringify({Id:e})});export{p as g,i as p};
